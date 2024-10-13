@@ -4,11 +4,9 @@
 
 # **[[batey/Welcome\|Welcome]]!**
 
-This is my new *batey*.
+This is *mi batey digital nuevo*.
 
-Make a note of something, [[create a link\|create a link]], or try [the Importer](https://help.obsidian.md/Plugins/Importer)!
-
-When I’m ready, delete this note and make el batey my own.
+Puedo make a note of something, [[create a link\|create a link]], or try [the Importer](https://help.obsidian.md/Plugins/Importer)!
 
 • [[testing/TEST POST\|TEST POST]]
 • [[testing/webhook test\|webhook test]]
