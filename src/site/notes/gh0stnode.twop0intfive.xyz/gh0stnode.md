@@ -10,5 +10,7 @@
 [[gh0stnode.twop0intfive.xyz/2024-10-01-actual-posts-incoming\|2024-10-01-actual-posts-incoming]]
 [[gh0stnode.twop0intfive.xyz/2024-10-02-whyyyy\|2024-10-02-whyyyy]]
 [[gh0stnode.twop0intfive.xyz/2024-10-02-ah-okay\|2024-10-02-ah-okay]]
+[[gh0stnode.twop0intfive.xyz/2024-10-13-we-have-moved\|2024-10-13-we-have-moved]]
+
 
 back to [[batey/Welcome\|Welcome]]

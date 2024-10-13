@@ -5,3 +5,5 @@
 # gh0stnode.twop0intfive.xyz has moved!
 
 The [[gh0stnode.twop0intfive.xyz/gh0stnode\|gh0stnode]] blog prototype is now a **category** of this new digital garden! 
+
+###### *back to the [[gh0stnode.twop0intfive.xyz/gh0stnode\|gh0stnode]]*
