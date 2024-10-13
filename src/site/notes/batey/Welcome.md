@@ -16,3 +16,4 @@ When I’m ready, delete this note and make el batey my own.
 [[other pages\|other pages]]
 [[batey/Welcome\|Welcome]]
 [[testing/webhook test\|webhook test]]
+[[testing/Why\|Why]]
