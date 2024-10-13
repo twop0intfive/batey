@@ -18,3 +18,5 @@ When I’m ready, delete this note and make el batey my own.
 [[testing/webhook test\|webhook test]]
 [[testing/Why\|Why]]
 [[testing/ah.\|ah.]]
+[[gh0stnode.twop0intfive.xyz/gh0stnode\|gh0stnode]]
+
