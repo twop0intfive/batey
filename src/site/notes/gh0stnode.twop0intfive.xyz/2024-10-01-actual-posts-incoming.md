@@ -4,3 +4,8 @@
 
 
 like, actually, forrrealllll
+
+
+
+
+*back to the [[gh0stnode.twop0intfive.xyz/gh0stnode\|gh0stnode]]*
