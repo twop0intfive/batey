@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/gh0stnode-twop0intfive-xyz/2024-09-10-yet-another-test-post/","title":"in theaters now! Coming this summer: "}
+{"dg-publish":true,"permalink":"/gh0stnode-twop0intfive-xyz/2024-09-10-yet-another-test-post/","title":"in theaters now! Coming this summer: ","created":"2024-10-13T16:30:20.000-04:00"}
 ---
 
 

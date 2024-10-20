@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/topics/pol/sane-media-consumption-during-election-seasons/","created":"2024-10-14T03:37:30.589-04:00"}
+{"dg-publish":true,"permalink":"/topics/pol/sane-media-consumption-during-election-seasons/","created":"2024-10-14T03:37:30.000-04:00"}
 ---
 
 Some tips on how to stay sane and keep your personal social media/entertainment consumption apolitical during (at least!) the US election season(s) especially in “battleground states” where special interests are doing everything they can to tell you how to vote:

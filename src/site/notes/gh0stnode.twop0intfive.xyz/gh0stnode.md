@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/gh0stnode-twop0intfive-xyz/gh0stnode/"}
+{"dg-publish":true,"permalink":"/gh0stnode-twop0intfive-xyz/gh0stnode/","created":"2024-10-13T16:33:18.000-04:00"}
 ---
 
 [[gh0stnode.twop0intfive.xyz/2024-08-10-test\|2024-08-10-test]]

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/testing/test-post/"}
+{"dg-publish":true,"permalink":"/testing/test-post/","created":"2024-10-13T11:31:30.610-04:00"}
 ---
 
 # Welcome to My Site!
