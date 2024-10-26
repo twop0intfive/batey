@@ -1,6 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/testing/testing/","created":"2024-10-20T17:22:42.000-04:00","updated":"2024-10-20T17:28:55.000-04:00"}
+{"dg-publish":true,"permalink":"/testing/testing/","created":"2024-10-20T17:22:42.000-04:00","updated":"2024-10-26T16:25:19.196-04:00"}
 ---
+
+Puedo make a note of something, [[create a link\|create a link]], or try [the Importer](https://help.obsidian.md/Plugins/Importer)! 
 
 [[testing/2024-10-13\|2024-10-13]]
 [[testing/ah.\|ah.]]
