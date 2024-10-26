@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/testing/webhook-test/","created":"2024-10-13T15:13:44.906-04:00"}
+{"dg-publish":true,"permalink":"/testing/webhook-test/","created":"2024-10-13T15:13:44.000-04:00","updated":"2024-10-13T15:33:27.713-04:00"}
 ---
 
 test of the webhook 
