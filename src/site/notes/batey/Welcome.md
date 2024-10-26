@@ -13,7 +13,7 @@ Puedo make a note of something, [[create a link\|create a link]], or try [the Im
 
 ## TOPICS
 ### [[gh0stnode.twop0intfive.xyz/gh0stnode\|gh0stnode]]
-### [[batey/pol\|pol]]
+### [[topics/pol/pol\|pol]]
 
-### [[batey/testing\|testing]]
+### [[testing/testing\|testing]]
 
