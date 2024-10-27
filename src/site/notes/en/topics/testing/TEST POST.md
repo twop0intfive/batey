@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/testing/test-post/","created":"2024-10-13T11:31:30.610-04:00","updated":"2024-10-27T15:56:51.177-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/testing/test-post/","created":"2024-10-13T11:31:30.000-04:00","updated":"2024-10-27T15:56:51.000-04:00"}
 ---
 
 # Welcome to My Site!
