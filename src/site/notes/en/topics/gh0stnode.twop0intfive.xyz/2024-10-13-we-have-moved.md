@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/gh0stnode-twop0intfive-xyz/2024-10-13-we-have-moved/","created":"2024-10-13T17:45:34.000-04:00","updated":"2024-10-13T17:51:25.000-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/gh0stnode-twop0intfive-xyz/2024-10-13-we-have-moved/","title":"We have moved!","created":"2024-10-13T17:45:34.000-04:00","updated":"2024-10-27T15:54:20.513-04:00"}
 ---
 
 # gh0stnode.twop0intfive.xyz has moved!
