@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/photography/frozen-hope-2024/","title":"Frozen Hope (2024)","created":"2024-11-22T08:28:59.649-05:00","updated":"2024-11-23T18:47:39.639-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/photography/frozen-hope-2024/","title":"Frozen Hope (2024)","created":"2024-11-22T08:28:59.649-05:00","updated":"2024-11-23T18:57:06.526-05:00"}
 ---
 
 ![IMG_3412 1.jpeg](/img/user/IMG_3412%201.jpeg)
@@ -16,6 +16,7 @@ The [essay](https://www.canva.com/design/DAGW9O1TcyE/QNGfByUJ_iKivEwFQlTLQQ/view
 
 This is the first time my work has been highlighted like this, and it's really exciting! I hope to do it again in the future.
 
+---
 ### Links 
 • [CENTRO](https://centropr.hunter.cuny.edu/))'s *[On Both Sides of the Lens: Documenting the Puerto Rican Diaspora](https://centropr.my.canva.site/on-both-sides-of-the-lens#on-both-sides-essay)*
 • [Calling All Diasporican Photographers (Instagram)](https://www.instagram.com/p/C7AOJpdtYfv/?igsh=b3F4OXp3OGVyZWl6) - *May 15, 2024*
