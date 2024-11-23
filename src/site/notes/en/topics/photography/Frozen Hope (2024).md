@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/photography/frozen-hope-2024/","title":"Frozen Hope (2024)","created":"2024-11-22T08:28:59.649-05:00","updated":"2024-11-23T18:57:06.526-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/photography/frozen-hope-2024/","title":"Frozen Hope (2024)","created":"2024-11-22T08:28:59.649-05:00","updated":"2024-11-23T18:57:27.771-05:00"}
 ---
 
 ![IMG_3412 1.jpeg](/img/user/IMG_3412%201.jpeg)
