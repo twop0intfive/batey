@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/photography/frozen-hope-2024/","title":"Frozen Hope (2024)","created":"2024-11-22T08:28:59.649-05:00","updated":"2024-11-23T18:57:27.771-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/photography/frozen-hope-2024/","title":"Frozen Hope (2024)","created":"2024-11-22T08:28:59.649-05:00","updated":"2024-11-23T19:00:52.127-05:00"}
 ---
 
 ![IMG_3412 1.jpeg](/img/user/IMG_3412%201.jpeg)
@@ -18,6 +18,6 @@ This is the first time my work has been highlighted like this, and it's really e
 
 ---
 ### Links 
-• [CENTRO](https://centropr.hunter.cuny.edu/))'s *[On Both Sides of the Lens: Documenting the Puerto Rican Diaspora](https://centropr.my.canva.site/on-both-sides-of-the-lens#on-both-sides-essay)*
+• [CENTRO](https://centropr.hunter.cuny.edu/)'s *[On Both Sides of the Lens: Documenting the Puerto Rican Diaspora](https://centropr.my.canva.site/on-both-sides-of-the-lens#on-both-sides-essay)*
 • [Calling All Diasporican Photographers (Instagram)](https://www.instagram.com/p/C7AOJpdtYfv/?igsh=b3F4OXp3OGVyZWl6) - *May 15, 2024*
 • [Announcing Selected Photographers for Digital Exhibition and Photobook, Documenting the Puerto Rican Diaspora (Instagram)](https://www.instagram.com/p/DCpYQWVSvJI/?igsh=MXBkbzgzOGhwZWMwdw==) - *November 21, 2024*
