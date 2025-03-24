@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.899-04:00","updated":"2025-03-24T08:55:23.487-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.899-04:00","updated":"2025-03-24T08:58:33.892-04:00"}
 ---
 
 This is my [digital garden](https://cagrimmett.com/2020/11/08/what-are-digital-gardens/). 
@@ -10,7 +10,7 @@ Here are a few important notes which apply to this site (which I own and manage)
 - this blog is not an open forum. I don't have any plans to add commenting functionality on this page as this is a digital garden and not a traditional blog. 
 - If you have any feedback, please feel free to reply on any [platforms I post to](https://www.twop0intfive.xyz/#:~:text=Follow) or [contact me directly](https://www.twop0intfive.xyz/contact.html#reach-out). 
 
-While, thankfully, it’s not something I have to do very often, I reserve the right to block or restrict anyone at any time for any reason. Some reasons I might limit or prevent your access to me include:
+While, thankfully, it’s not something I have to do very often, I reserve the right to block or restrict any person or technical entity at any time for any reason. Some reasons I might limit or prevent your access to me include:
 - harassing me or anyone connected to me, in person or online, on my accounts, theirs, or my connections’
 - promoting actively harmful or hateful political, social, or religious agendas 
 - expressing racism, sexism, homophobia, transphobia, or xenophobia  
