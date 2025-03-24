@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.899-04:00","updated":"2024-10-27T16:04:35.000-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.899-04:00","updated":"2025-03-24T08:55:23.487-04:00"}
 ---
 
 This is my [digital garden](https://cagrimmett.com/2020/11/08/what-are-digital-gardens/). 
@@ -14,5 +14,5 @@ While, thankfully, it’s not something I have to do very often, I reserve the r
 - harassing me or anyone connected to me, in person or online, on my accounts, theirs, or my connections’
 - promoting actively harmful or hateful political, social, or religious agendas 
 - expressing racism, sexism, homophobia, transphobia, or xenophobia  
+- displaying bot-like behavior
 - general [jagoffery](https://www.urbandictionary.com/define.php?term=jag%20off).
-
