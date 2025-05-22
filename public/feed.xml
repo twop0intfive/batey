@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>el batey | digital garden</title>
+  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self"/>
+  <updated>2025-01-01T00:00:00Z</updated>
+  <id>https://elbatey.twop0intfive.xyz/</id>
+
+  <entry>
+    <title>Sample Post</title>
+    <link href="https://elbatey.twop0intfive.xyz/sample-post" />
+    <id>https://elbatey.twop0intfive.xyz/sample-post</id>
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>This is a placeholder. Replace with real entries soon.</summary>
+  </entry>
+</feed>
