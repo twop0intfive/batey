@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/personal/kept-ya-waiting-huh/","title":"Kept ya waiting, huh?","created":"2025-05-22T20:21:02.741-04:00","updated":"2025-05-22T20:38:00.499-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/personal/kept-ya-waiting-huh/","title":"Kept ya waiting, huh?","created":"2025-05-22T20:21:02.000-04:00","updated":"2025-05-22T21:15:18.862-04:00"}
 ---
 
 It’s been a bit since I posted anywhere.
@@ -13,7 +13,7 @@ What’s been going on?
 - I’ve been building a system to track and manage my creative ideas—something that helps me show up more often, more authentically.
 - I’m thinking about content in layers now: how to diversify where I share and what I share—without diluting it.
 - I’ve been drawing on some of the org & PM ideas from my job to bring structure into my creative work. And vice versa.
-- I’m headed to Puerto Rico soon—my first visit in 18 years. It’s bittersweet. I was hoping to see my grandmother, but [she passed away](https://www.instagram.com/p/DJSjCRtNy9z/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==) roughly a month ago. Still, I’m looking forward to reconnecting with family, culture, and self. Hoping to come back broke but rich in experience.
+- I’m headed to Puerto Rico soon—my first visit in 18 years. It’s bittersweet. I was hoping to see my grandmother, but [she passed away](https://www.instagram.com/p/DJSjCRtNy9z/?igsh=YnpsaGZrZjg3ZmRv) roughly a month ago. Still, I’m looking forward to reconnecting with family, culture, and self. Hoping to come back broke but rich in experience.
 
 There’s a shift happening. I feel it. I may be taking a more personal tone here going forward. Not because I’m trying to build a brand, but because the “professional” world feels increasingly surreal. Like [Severance](https://www.imdb.com/title/tt11280740/?ref_=fn_all_ttl_1) or [The Morning Show](https://www.imdb.com/title/tt7203552/), but worse—and I’ve spent 20 years inside it.
 
