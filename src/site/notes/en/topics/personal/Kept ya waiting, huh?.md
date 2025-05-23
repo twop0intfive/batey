@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/personal/kept-ya-waiting-huh/","title":"Kept ya waiting, huh?","created":"2025-05-22T20:21:02.741-04:00","updated":"2025-05-22T20:33:16.493-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/personal/kept-ya-waiting-huh/","title":"Kept ya waiting, huh?","created":"2025-05-22T20:21:02.741-04:00","updated":"2025-05-22T20:38:00.499-04:00"}
 ---
 
 It’s been a bit since I posted anywhere.
@@ -25,7 +25,7 @@ One of my favorite parts (so far) of the Era of the Business Idiot, likely in la
 > 
 > Remote work terrifies the Business Idiot, because it removes the performative layer that allowed them to stomp around and feel important, reducing their work to, well...work.[Office culture is inherently heteronormative and white](https://www.huffpost.com/entry/black-workers-prefer-remote-work-racist-office_l_60c8f805e4b0f7e7ccf59fa1?ref=wheresyoured.at), and [black women are less likely to be promoted by their managers](https://www.pbs.org/newshour/economy/report-black-women-less-likely-to-be-promoted-supported-by-their-managers?ref=wheresyoured.at), and continuing the existence of "The Office" is all about making sure The Business Idiot reigns supreme. Removing the ability for the managerial hall monitors to look at you and try and work out what you're doing without ever really helping is a big part of being a manager — and if you're a manager reading this and saying you don't do this, I challenge you to talk to another person that doesn't confirm your biases.
 
-I don’t know exactly what’s next in my career. But I do know I want flexibility. I want to position myself so that my experience and education aren’t just leveraged for shareholder gain or empty KPIs—but for something that actually matters. To my family. My community. [Mi gente](obsidian://open?vault=batey&file=en%2Ftopics%2Fphotography%2FFrozen%20Hope%20(2024)). P’al mundo.
+I don’t know exactly what’s next in my career. But I do know I want flexibility. I want to position myself so that my experience and education aren’t just leveraged for shareholder gain or empty KPIs—but for something that actually matters. To my family. My community. Mi gente. P’al mundo.
 
 More soon—from the past few months and from this trip.
 
