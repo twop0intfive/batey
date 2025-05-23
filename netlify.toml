@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm install && npm run generate:feed && npm run build"
+  command = "npm install && npm run build && npm run generate:feed"
 
 [[redirects]]
   from = "/api/*"
