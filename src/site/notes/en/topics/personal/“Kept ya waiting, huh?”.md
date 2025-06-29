@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/personal/kept-ya-waiting-huh/","title":"Kept ya waiting, huh?","created":"2025-05-22T20:21:02.000-04:00","updated":"2025-05-22T21:15:18.862-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/personal/kept-ya-waiting-huh/","title":"Kept ya waiting, huh?","created":"2025-05-22T20:21:02.741-04:00","updated":"2025-05-22T21:15:18.000-04:00"}
 ---
 
 It’s been a bit since I posted anywhere.

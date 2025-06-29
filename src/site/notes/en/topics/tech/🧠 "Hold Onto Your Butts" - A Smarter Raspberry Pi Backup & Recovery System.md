@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/tech/hold-onto-your-butts-a-smarter-raspberry-pi-backup-and-recovery-system/","title":"🧠 \"Hold Onto Your Butts\": A Smarter Raspberry Pi Backup & Recovery System","created":"2025-05-31T19:31:32.855-04:00","updated":"2025-05-31T19:37:45.249-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/tech/hold-onto-your-butts-a-smarter-raspberry-pi-backup-and-recovery-system/","title":"🧠 \"Hold Onto Your Butts\": A Smarter Raspberry Pi Backup & Recovery System","created":"2025-05-31T19:31:32.000-04:00","updated":"2025-05-31T19:37:45.000-04:00"}
 ---
 
 
