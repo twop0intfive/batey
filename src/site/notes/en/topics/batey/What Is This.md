@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.000-04:00","updated":"2025-06-28T20:47:25.781-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.000-04:00","updated":"2025-07-04T19:44:19.032-04:00"}
 ---
 
 This is my [digital garden](https://cagrimmett.com/2020/11/08/what-are-digital-gardens/). 
@@ -12,9 +12,10 @@ Here are a few important notes which apply to this site (which I own and manage)
 
 ---
 
-While, thankfully, it’s not something I have to do very often, I reserve the right to block or restrict any person or technical entity at any time for any reason. Some reasons I might limit or prevent your access to me include:
+While, thankfully, it’s not something I have to do very often, I reserve the right to block or restrict any human or intelligent entity at any time for any reason. Some reasons I might limit or prevent your access to me include:
 - harassing me or anyone connected to me, in person or online, on my accounts, theirs, or my connections’
-- promoting actively harmful or hateful political, social, or religious agendas 
+- promoting actively harmful or hateful political, social, religious, or economic agendas 
 - expressing racism, sexism, homophobia, transphobia, or xenophobia  
 - displaying bot-like behavior
+- interacting with me as a bot without my knowledge or express authorization
 - general [jagoffery](https://www.urbandictionary.com/define.php?term=jag%20off).
