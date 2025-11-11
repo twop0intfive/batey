@@ -3,3 +3,5 @@
 ---
 
 This is [mi](https://twop0intfive.xyz) [batey digital](https://elbatey.twop0intfive.xyz/en/topics/batey/what-is-this/).
+
+[🔙 return to twop0intfive.xyz](https://twop0intfive.xyz)
