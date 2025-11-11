@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/pi-hmp-stack-v2-the-phoenix-protocol-build-log/","title":"PiHMP Stack (v2) - The Phoenix Protocol Build Log","created":"2025-11-09T18:57:47.948-05:00","updated":"2025-11-09T19:39:11.141-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/pi-hmp-stack-v2-the-phoenix-protocol-build-log/","title":"PiHMP Stack (v2) - The Phoenix Protocol Build Log","created":"2025-11-09T18:57:47.948-05:00","updated":"2025-11-10T19:37:06.045-05:00"}
 ---
 
 ### Introduction: The Inciting Incident
@@ -347,7 +347,7 @@ This dashboard is now live at `http://192.168.1.250:8000`.
 
 ## Part 4: The "Ray Arnold" Bot (Automation & Awareness)
 
-This is the Pi's "voice." It's a series of `bash` scripts that use Discord Webhooks to report on system status. This is **not** a Docker container, but a set of scripts running on the host OS so they can monitor boot and shutdown.
+This is the Pi's "voice." It's [a series of `bash` scripts that use Discord Webhooks to report on system status](https://elbatey.twop0intfive.xyz/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/hold-onto-your-butts-a-smarter-raspberry-pi-backup-and-recovery-system/). This is **not** a Docker container, but a set of scripts running on the host OS so they can monitor boot and shutdown.
 
 **File 7 of 15: `/usr/local/bin/pi-online-notify.sh` (New File)** _Notifies Discord when the Pi has successfully booted and regained network access._
 
