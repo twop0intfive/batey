@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/pi-hmp-stack-v2-the-phoenix-protocol-build-log/","title":"PiHMP Stack (v2) - The Phoenix Protocol Build Log","created":"2025-11-09T18:57:47.948-05:00","updated":"2025-11-11T21:01:35.427-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/pi-hmp-stack-v2-the-phoenix-protocol-build-log/","title":"PiHMP Stack (v2) - The Phoenix Protocol Build Log","created":"2025-11-09T18:57:47.948-05:00","updated":"2025-11-15T20:06:14.897-05:00"}
 ---
 
 ### Introduction: The Inciting Incident
@@ -18,7 +18,7 @@ This document is the master build log for that project. It contains **every fil
     
 4. **The "Ray Arnold" Bot:** A set of scripts that gives the Pi a voice, notifying me on Discord of reboots, shutdowns, internet outages, and backup status.
     
-5. **The "3-2-1" Backup Strategy:** A fully automated, two-part backup plan with local snapshots and off-site, version-controlled config files in a private GitHub repo.
+5. **The "3-2-1" Backup Strategy:** A fully automated, two-part backup plan with local snapshots and redundant, version-controlled config files in two separate off-site locations (GitHub and Codeberg).
     
 
 ## Part 1: The Foundation (Storage & Networking)
@@ -50,12 +50,16 @@ To allow my Mac to back up, the Pi needs to act as a Time Machine. This requires
 
 First, we install the required packages:
 
+Bash
+
 ```
 sudo apt-get update
 sudo apt-get install -y samba avahi-daemon
 ```
 
 We must add our user (`[your_username]`) to Samba's internal password database:
+
+Bash
 
 ```
 sudo smbpasswd -a [your_username]
@@ -143,6 +147,8 @@ XML
 
 Finally, we restart the services to apply all changes:
 
+Bash
+
 ```
 sudo systemctl restart smbd
 sudo systemctl restart avahi-daemon
@@ -158,6 +164,8 @@ The fix was to set a permanent static IP. Since my OS uses `NetworkManager`, `
 
 First, find the connection name:
 
+Bash
+
 ```
 nmcli con show
 # NAME                UUID                                  TYPE      DEVICE
@@ -165,6 +173,8 @@ nmcli con show
 ```
 
 Then, apply the static IP settings using that name:
+
+Bash
 
 ```
 # Set the Static IP
@@ -268,6 +278,8 @@ services:
 
 To launch the stack:
 
+Bash
+
 ```
 cd ~/docker
 sudo docker compose up -d --build
@@ -275,9 +287,36 @@ sudo docker compose up -d --build
 
 ## Part 3: The "Cockpit" (Cyberpunk Dashboard)
 
-To create a single, easy-to-remember homepage for all my services, I built this dashboard. It's served by its own lightweight Docker container.
+To create a single, easy-to-remember homepage for all my services, I built this dashboard. It's served by its own lightweight Docker container, keeping it in line with the rest of the stack.
 
-**File 5 of 17: `~/dashboard/Dockerfile` (New File)**
+### 3.1: The Web App Icon (for iOS)
+
+To make the dashboard feel like a native app when saved to an iPhone home screen, we'll create a proper icon.
+
+First, install `imagemagick`:
+
+Bash
+
+```
+sudo apt-get update
+sudo apt-get install imagemagick
+```
+
+Next, run this command to generate a 180x180px icon with the terminal-cursor theme:
+
+Bash
+
+```
+convert -size 180x180 xc:none -fill "#0d0208" -draw "roundrectangle 0,0 180,180 32,32" -fill "#00ff00" -draw "rectangle 60,30 120,150" ~/dashboard/apple-touch-icon.png
+```
+
+_(This creates File 5 of 17, `~/dashboard/apple-touch-icon.png`)_
+
+### 3.2: The Dashboard Files
+
+These three files all live in the `~/dashboard/` directory.
+
+**File 6 of 17: `~/dashboard/Dockerfile` (New File)** _Tells Docker how to build the dashboard container._
 
 Dockerfile
 
@@ -291,6 +330,7 @@ WORKDIR /app
 # Copy your dashboard files into the container
 COPY index.html .
 COPY favicon.svg .
+COPY apple-touch-icon.png .
 
 # Expose port 8000
 EXPOSE 8000
@@ -299,7 +339,7 @@ EXPOSE 8000
 CMD ["python3", "-m", "http.server", "8000"]
 ```
 
-**File 6 of 17: `~/dashboard/favicon.svg` (New File)**
+**File 7 of 17: `~/dashboard/favicon.svg` (New File)** _A simple, animated SVG for the browser tab icon._
 
 XML
 
@@ -312,7 +352,7 @@ XML
 </svg>
 ```
 
-**File 7 of 17: `~/dashboard/index.html` (New File)**
+**File 8 of 17: `~/dashboard/index.html` (New File)** _The dashboard page itself, now with links to the icons and web app settings._
 
 HTML
 
@@ -322,6 +362,10 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Dashboard">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>[your_pi_hostname] :: dashboard</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
@@ -374,13 +418,13 @@ HTML
 
 This is the Pi's "voice." It's a series of `bash` scripts that use Discord Webhooks to report on system status. This is **not** a Docker container, but a set of scripts running on the host OS so they can monitor boot and shutdown.
 
-**File 8 of 17: `/usr/local/bin/pi-online-notify.sh` (New File)** _Notifies Discord when the Pi has successfully booted and regained network access._
+**File 9 of 17: `/usr/local/bin/pi-online-notify.sh` (New File)** _Notifies Discord when the Pi has successfully booted and regained network access._
 
 Bash
 
 ```
 #!/bin/bash
-WEBHOOK_URL="[https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY](https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY)" # <-- SET THIS
+WEBHOOK_URL="https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY" # <-- SET THIS
 MESSAGE="🦖 Jurassic Park is back online."
 
 # Wait until network is up
@@ -396,7 +440,7 @@ for i in {1..10}; do
 done
 ```
 
-**File 9 of 17: `/etc/systemd/system/pi-online-notify.service` (New File)** _This service triggers the above script on boot._
+**File 10 of 17: `/etc/systemd/system/pi-online-notify.service` (New File)** _This service triggers the above script on boot._
 
 Ini, TOML
 
@@ -416,13 +460,13 @@ WantedBy=multi-user.target
 
 Enable it with: `sudo chmod +x /usr/local/bin/pi-online-notify.sh` and `sudo systemctl enable pi-online-notify.service`.
 
-**File 10 of 17: `/usr/local/bin/pi-shutdown-notify.sh` (New File)** _Notifies Discord when the system is shutting down._
+**File 11 of 17: `/usr/local/bin/pi-shutdown-notify.sh` (New File)** _Notifies Discord when the system is shutting down._
 
 Bash
 
 ```
 #!/bin/bash
-WEBHOOK_URL="[https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY](https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY)" # <-- SET THIS
+WEBHOOK_URL="https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY" # <-- SET THIS
 MESSAGE="💥 Hold onto your butts."
 
 curl -H "Content-Type: application/json" \
@@ -431,7 +475,7 @@ curl -H "Content-Type: application/json" \
      $WEBHOOK_URL
 ```
 
-**File 11 of 17: `/lib/systemd/system-shutdown/pi-shutdown-notify.sh` (New File)** _This is the system _hook_ that triggers the shutdown script. Note the different path._
+**File 12 of 17: `/lib/systemd/system-shutdown/pi-shutdown-notify.sh` (New File)** _This is the system _hook_ that triggers the shutdown script. Note the different path._
 
 Bash
 
@@ -442,7 +486,7 @@ Bash
 
 Enable it with: `sudo chmod +x /usr/local/bin/pi-shutdown-notify.sh` and `sudo chmod +x /lib/systemd/system-shutdown/pi-shutdown-notify.sh`.
 
-**File 12 of 17: `/usr/local/bin/pi-monitor-inet.sh` (New File)** _This script runs continuously to check for internet outages._
+**File 13 of 17: `/usr/local/bin/pi-monitor-inet.sh` (New File)** _This script runs continuously to check for internet outages._
 
 Bash
 
@@ -450,7 +494,7 @@ Bash
 #!/bin/bash
 
 # --- CONFIGURATION ---
-WEBHOOK_URL="[https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY](https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY)" # <-- SET THIS
+WEBHOOK_URL="https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY" # <-- SET THIS
 HOST_TO_PING="1.1.1.1" # A reliable external server
 SLEEP_INTERVAL="60"  # Check every 60 seconds
 
@@ -490,7 +534,7 @@ while true; do
 done
 ```
 
-**File 13 of 17: `/etc/systemd/system/pi-monitor-inet.service` (New File)** _This service runs the monitor script in the background._
+**File 14 of 17: `/etc/systemd/system/pi-monitor-inet.service` (New File)** _This service runs the monitor script in the background._
 
 Ini, TOML
 
@@ -521,23 +565,28 @@ This is the final, and most important, piece. A "3-2-1" strategy means 3 copies 
 
 This script creates a full `.tar.gz` snapshot of all configs and user data and saves it to the external 2TB drive. This is our primary local backup.
 
-**File 14 of 17: `/usr/local/bin/pi-backup.sh` (New File)** _This is the final, working script with the correct `tar` syntax._
+**File 15 of 17: `/usr/local/bin/pi-backup.sh` (Hardened File)** _This is the final, working script with the correct `tar` syntax and improved error reporting._
 
 Bash
 
 ```
 #!/bin/bash
+
+# --- CONFIGURATION ---
 BACKUP_DIR="/mnt/storage-2tb/pi_backups"
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 DEST="$BACKUP_DIR/backup_$TIMESTAMP.tar.gz"
-WEBHOOK_URL="[https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY](https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY)" # <-- SET THIS
+WEBHOOK_URL="https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY" # <-- SET THIS
+LOG_FILE="/var/log/pi-local-backup.log" # <-- Dedicated log file
 
+# --- SCRIPT ---
 mkdir -p "$BACKUP_DIR"
-echo "Starting local full snapshot at $(date)"
+echo "=============================================" > "$LOG_FILE"
+echo "Starting local full snapshot at $(date)" >> "$LOG_FILE"
 
-# --- TAR COMMAND SYNTAX (OPTIONS FIRST) ---
-# This syntax is critical. All --exclude flags must come BEFORE the paths.
-sudo tar -czf "$DEST" \
+# --- TAR COMMAND ---
+# Capture STDERR (the error message) from the tar command into a variable
+TAR_ERROR=$(sudo tar -czf "$DEST" \
     --exclude=/mnt/storage-2tb \
     --exclude=/mnt/usb-stick1 \
     --exclude=/mnt/usb-stick2 \
@@ -548,14 +597,21 @@ sudo tar -czf "$DEST" \
     /home/[your_username] \
     /etc \
     /opt \
-    /usr/local/bin
+    /usr/local/bin 2>&1) # <-- This 2>&1 captures the error
+
+# Store the exit code of the tar command
+TAR_EXIT_CODE=$?
 
 # --- NOTIFICATION ---
-if [ $? -eq 0 ]; then
+if [ $TAR_EXIT_CODE -eq 0 ]; then
     SIZE=$(du -h "$DEST" | cut -f1)
-    MSG="✅ **LOCAL BACKUP (SNAPSHOT):** Completed successfully. File: \`basename $DEST\` ($SIZE)"
+    FILENAME=$(basename "$DEST")
+    MSG="✅ **LOCAL BACKUP (SNAPSHOT):** Completed successfully. File: \`$FILENAME\` ($SIZE)"
+    echo "Successfully created backup: $DEST ($SIZE)" >> "$LOG_FILE"
 else
-    MSG="❌ **LOCAL BACKUP (SNAPSHOT):** FAILED at $(date)."
+    # Send the actual error message to Discord
+    MSG="❌ **LOCAL BACKUP (SNAPSHOT):** FAILED at $(date). \`\`\`$TAR_ERROR\`\`\`"
+    echo "Backup FAILED. Error: $TAR_ERROR" >> "$LOG_FILE"
 fi
 
 curl -H "Content-Type: application/json" \
@@ -564,19 +620,35 @@ curl -H "Content-Type: application/json" \
      $WEBHOOK_URL
 
 # --- CLEANUP ---
-# Delete backups older than 7 days
+echo "Starting cleanup of backups older than 7 days..." >> "$LOG_FILE"
 find "$BACKUP_DIR" -type f -mtime +7 -name "backup_*.tar.gz" -delete
+echo "Cleanup complete." >> "$LOG_FILE"
+echo "=============================================" >> "$LOG_FILE"
 ```
 
 Enable it with: `sudo chmod +x /usr/local/bin/pi-backup.sh`.
 
 ### 5.2: Off-site Config Backup (3:15 AM)
 
-This script provides our off-site copy. It pushes _only_ the critical config files (all 16 other files in this document) to a private GitHub repository.
+This script provides our off-site copy. It pushes _only_ the critical config files to two private Git repositories: **GitHub** and **Codeberg**.
 
-**Setup:** This requires a one-time setup of a [private GitHub repo](https://github.com/) and an [SSH Deploy Key](https://www.google.com/search?q=https://docs.github.com/en/developers/overview/managing-deploy-keys%23setup-2) with write access.
+**Setup:** This requires setting up two private repositories and adding the Pi's SSH key (`~/.ssh/id_ed25519.pub`) as a **Deploy Key** with **write access** to both.
 
-**File 15 of 17: `/usr/local/bin/pi-config-git-backup.sh` (Complete, Hardened File)** _This is the final, "cron-proofed" script that correctly handles `sudo`, `git` SSH keys, and remote/local conflicts._
+1. **GitHub Repo:** `[your-private-repo-name]`
+    
+2. **Codeberg Repo:** `[your-codeberg-repo-name]`
+    
+3. Add the Codeberg remote to the local git repo (a one-time setup):
+    
+    Bash
+    
+    ```
+    cd /home/[your_username]/[your-private-repo-name]
+    git remote add codeberg ssh://git@codeberg.org/[your_username]/[your-codeberg-repo-name].git
+    ```
+    
+
+**File 16 of 17: `/usr/local/bin/pi-config-git-backup.sh` (Complete, Hardened File)** _This is the final, "cron-proofed" script that pushes to both remotes and reports on their combined status._
 
 Bash
 
@@ -593,7 +665,7 @@ LOG_FILE="/var/log/pi-config-git-backup.log"
 # --- END CRON-PROOFING ---
 
 # --- CONFIGURATION ---
-WEBHOOK_URL="[https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY](https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY)" # <-- SET THIS
+WEBHOOK_URL="https://discord.com/api/webhooks/XXXXXXXXX/YYYYYYYY" # <-- SET THIS
 CONFIG_REPO_DIR="/home/[your_username]/[your-private-repo-name]" # <-- SET YOUR REPO PATH
 COMMIT_MSG="Automated config backup: $(date +"%Y-%m-%d %H:%M:%S")"
 
@@ -632,9 +704,10 @@ mkdir -p "$CONFIG_REPO_DIR/systemd_services" || true
 mkdir -p "$CONFIG_REPO_DIR/scripts" || true
 
 cp /home/[your_username]/docker/docker-compose.yml "$CONFIG_REPO_DIR/docker/" || true
-cp /home/twop0intfive/dashboard/index.html "$CONFIG_REPO_DIR/dashboard/" || true
-cp /home/twop0intfive/dashboard/Dockerfile "$CONFIG_REPO_DIR/dashboard/" || true
-cp /home/twop0intfive/dashboard/favicon.svg "$CONFIG_REPO_DIR/dashboard/" || true
+cp /home/[your_username]/dashboard/index.html "$CONFIG_REPO_DIR/dashboard/" || true
+cp /home/[your_username]/dashboard/Dockerfile "$CONFIG_REPO_DIR/dashboard/" || true
+cp /home/[your_username]/dashboard/favicon.svg "$CONFIG_REPO_DIR/dashboard/" || true
+cp /home/[your_username]/dashboard/apple-touch-icon.png "$CONFIG_REPO_DIR/dashboard/" || true
 cp /etc/fstab "$CONFIG_REPO_DIR/system_configs/" || true
 cp /etc/samba/smb.conf "$CONFIG_REPO_DIR/system_configs/" || true
 cp /etc/avahi/services/timemachine.service "$CONFIG_REPO_DIR/system_configs/" || true
@@ -654,13 +727,41 @@ if ! git diff-index --cached --quiet HEAD --; then
     echo "Changes detected, committing and pushing..."
     git commit -m "$COMMIT_MSG"
     
+    # --- PUSH TO BOTH REMOTES ---
+    PUSH_GITHUB_SUCCESS=false
+    PUSH_CODEBERG_SUCCESS=false
+    MSG_FINAL=""
+
+    echo "Pushing to GitHub..."
     if git push origin main; then
-        MSG="✅ **OFF-SITE BACKUP (CONFIG):** Pushed new config version to GitHub successfully."
-        notify_discord "$MSG"
+        echo "GitHub push successful."
+        PUSH_GITHUB_SUCCESS=true
     else
-        MSG="❌ **OFF-SITE BACKUP (CONFIG):** FAILED to push to GitHub. Check log on Pi: $LOG_FILE"
-        notify_discord "$MSG"
+        echo "GitHub push FAILED."
     fi
+
+    echo "Pushing to Codeberg..."
+    if git push codeberg main; then
+        echo "Codeberg push successful."
+        PUSH_CODEBERG_SUCCESS=true
+    else
+        echo "Codeberg push FAILED."
+    fi
+
+    # --- NOTIFICATION LOGIC ---
+    if $PUSH_GITHUB_SUCCESS && $PUSH_CODEBERG_SUCCESS; then
+        MSG_FINAL="✅ **OFF-SITE BACKUP (CONFIG):** Pushed new config version to GitHub & Codeberg successfully."
+    elif $PUSH_GITHUB_SUCCESS; then
+        MSG_FINAL="⚠️ **OFF-SITE BACKUP (CONFIG):** Pushed to GitHub, but FAILED to push to Codeberg."
+    elif $PUSH_CODEBERG_SUCCESS; then
+        MSG_FINAL="⚠️ **OFF-SITE BACKUP (CONFIG):** Pushed to Codeberg, but FAILED to push to GitHub."
+    else
+        MSG_FINAL="❌ **OFF-SITE BACKUP (CONFIG):** FAILED to push to both GitHub and Codeberg. Check log on Pi: $LOG_FILE"
+    fi
+    
+    notify_discord "$MSG_FINAL"
+    # --- END NEW LOGIC ---
+
 else
     echo "No config changes detected. Nothing to push."
     MSG="ℹ️ **OFF-SITE BACKUP (CONFIG):** No config changes detected. Backup skipped."
@@ -677,7 +778,7 @@ Enable it with: `sudo chmod +x /usr/local/bin/pi-config-git-backup.sh`.
 
 Finally, we schedule both backups to run automatically.
 
-**File 16 of 17: `sudo crontab -e` (Addition)** _This file schedules both jobs, separated by 15 minutes._
+**File 17 of 17: `sudo crontab -e` (Addition)** _This file schedules both jobs, separated by 15 minutes._
 
 ```
 # Run the full local snapshot at 3:00 AM
@@ -687,23 +788,33 @@ Finally, we schedule both backups to run automatically.
 15 3 * * * /usr/local/bin/pi-config-git-backup.sh
 ```
 
-_(File 17 is the log itself, `/var/log/pi-config-git-backup.log`, which is created by the script)._
-
 ---
 
 ### Post-Build Addendum: Hardening & Debugging
 
-The initial version of `pi-config-git-backup.sh` (File 15) failed silently when run by `cron`. The debugging process revealed two critical flaws:
+The initial version of `pi-config-git-backup.sh` (File 16) failed silently when run by `cron`. The debugging process revealed a cascade of issues:
 
-1. **Git Ownership:** The `cron` job runs as `root`, but the git repository lives in `/home/[your_username]/`. This caused a `fatal: detected dubious ownership` error. This was fixed by running `sudo git config --global --add safe.directory /home/[your_username]/[your-private-repo-name]` one time.
+1. **Git Ownership:** The `cron` job runs as `root`, but the git repository lives in `/home/[your_username]/`. This caused a `fatal: detected dubious ownership` error.
     
-2. **State Conflicts:** The original script used a `git pull` command, which failed if the local repository had changes (which it _always_ did after the `cp` commands). This created a race condition that caused `[rejected] main -> main (fetch first)` errors.
+    - **Fix:** Run `sudo git config --global --add safe.directory /home/[your_username]/[your-private-repo-name]` one time.
+        
+2. **State Conflicts:** The original script used a `git pull` command, which failed if the local repository had changes. This created a race condition that caused `[rejected] main -> main (fetch first)` errors.
     
+    - **Fix:** Replace the `pull` logic with `git reset --hard origin/main`. This robustly wipes local changes, force-syncs with the remote, and _then_ copies the new files.
+        
+3. **SSH Host Keys:** When adding Codeberg, the `git push` command (run by `root`) would fail because `codeberg.org` was not in the `root` user's `known_hosts` file, causing an interactive prompt.
+    
+    - **Fix:** Run `sudo ssh -T -i /home/[your_username]/.ssh/id_ed25519 git@codeberg.org` one time. This forces authentication as `root` and allows you to answer "yes" to the prompt, adding the host key.
+        
+4. **SSH URL Format:** The `git push` command still failed with `fatal: ... does not appear to be a git repository`. This was _not_ an SSH key error, but a URL format error.
+    
+    - **Fix:** The Codeberg remote URL needed the `ssh://` prefix. The correct command to fix the remote was: `git remote set-url codeberg ssh://git@codeberg.org/[your_username]/[your-codeberg-repo-name].git`
+        
 
-The final, hardened version of the script fixes this by **using `git reset --hard origin/main`**. This robustly wipes all local changes, force-syncs with the remote, and _then_ copies the new files. This method is resilient to conflicts and ideal for an automated, non-interactive script.
+After fixing these issues, the automated, multi-remote backup works perfectly.
 
 ## Conclusion
 
-What started as a disaster (a dead SD card) became the ultimate upgrade. My new Pi stack is faster, 100% containerized, and provides Time Machine backups for my Mac. It's fully resilient, with a static IP, no IPv6 leaks, and a full 3-2-1 backup strategy.
+What started as a disaster (a dead SD card) became the ultimate upgrade. My new Pi stack is faster, 100% containerized, and provides Time Machine backups for my Mac. It's fully resilient, with a static IP, no IPv6 leaks, and a full 3-2-1 backup strategy with off-site redundancy.
 
 Best of all, it's now a self-aware, movie-quoting node that tells me exactly what it's doing.
