@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/pi-hmp-stack-v2-the-phoenix-protocol-build-log/","title":"PiHMP Stack (v2) - The Phoenix Protocol Build Log","created":"2025-11-09T18:57:47.000-05:00","updated":"2025-11-15T20:06:14.000-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/pi-hmp-stack-v2-the-phoenix-protocol-build-log/","title":"PiHMP Stack (v2) - The Phoenix Protocol Build Log","created":"2025-11-09T18:57:47.948-05:00","updated":"2025-11-15T20:06:14.897-05:00"}
 ---
 
 ### Introduction: The Inciting Incident

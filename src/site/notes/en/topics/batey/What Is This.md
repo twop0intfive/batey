@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.000-04:00","updated":"2025-07-04T19:45:46.000-04:00"}
+{"dg-publish":true,"permalink":"/en/topics/batey/what-is-this/","created":"2024-10-26T12:27:00.000-04:00","updated":"2025-07-04T19:45:46.835-04:00"}
 ---
 
 This is my [digital garden](https://cagrimmett.com/2020/11/08/what-are-digital-gardens/). 
