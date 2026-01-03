@@ -13,9 +13,9 @@ eleventyExcludeFromCollections: true
 {%- for post in collections.all | reverse -%}
 {%- if loop.index0 < 10 -%}
 <item>
-<title>{{ post.data.title | e }}</title>
+<title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
 <link>https://elbatey.twop0intfive.xyz{{ post.url }}</link>
-<guid>https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
+<guid isPermaLink="true">https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
 <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
 <description><![CDATA[{{ post.templateContent | safe }}]]></description>
 </item>
