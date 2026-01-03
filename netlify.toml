@@ -1,6 +1,10 @@
 [build]
+  # We removed 'npm run generate:feed' to fix the exit code 1 error.
+  command = "npm install && npm run build"
   publish = "dist"
-  command = "npm install && npm run build && npm run generate:feed"
+
+[build.environment]
+  NODE_VERSION = "22"
 
 [[redirects]]
   from = "/api/*"
@@ -11,4 +15,3 @@
   from = "/*"
   to = "/404"
   status = 404
-
