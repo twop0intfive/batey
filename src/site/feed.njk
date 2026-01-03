@@ -14,7 +14,8 @@ eleventyExcludeFromCollections: true
     {%- if loop.index0 < 10 -%}
     <item>
       <title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
-      <link>{{ "https://elbatey.twop0intfive.xyz" + post.url }}</link>
+      <link>https://elbatey.twop0intfive.xyz{{ post.url }}</link>
+      <atom:link rel="alternate" type="text/html" href="https://elbatey.twop0intfive.xyz{{ post.url }}" />
       <guid isPermaLink="true">https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
       <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
       <dc:creator>twop0intfive</dc:creator>
