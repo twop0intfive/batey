@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/the-sovereign-creator-stack-achieving-triple-mirror-redundancy-and-automated-observability-on-a-raspberry-pi/","title":"The Sovereign Creator Stack: Achieving Triple-Mirror Redundancy and Automated Observability on a Raspberry Pi","created":"2026-01-03T15:41:56.879-05:00","updated":"2026-01-03T16:18:35.634-05:00"}
+{"dg-publish":true,"permalink":"/en/topics/tech/guides-and-walkthroughs-mostly-for-myself/the-sovereign-creator-stack-achieving-triple-mirror-redundancy-and-automated-observability-on-a-raspberry-pi/","title":"The Sovereign Creator Stack: Achieving Triple-Mirror Redundancy and Automated Observability on a Raspberry Pi","created":"2026-01-03T15:41:56.879-05:00","updated":"2026-01-03T16:27:33.535-05:00"}
 ---
 
 ## How I migrated my automated broadcasting infrastructure into a self-healing monorepo backed by GitHub, GitLab, and Codeberg simultaneously.
@@ -8,7 +8,7 @@ As I [step into a new role](https://www.instagram.com/p/DRlDi3lD5Bw/?utm_source=
 
 My silent gameplay streaming is a vital creative outlet, but the administrative overhead of cross-posting content to [Mastodon](https://corteximplant.com/@twop0intfive), [Bluesky](https://bsky.app/profile/twop0intfive.xyz), and [Threads](https://www.threads.com/@el.pittsboricua) was becoming friction that stopped the creative process entirely.
 
-[Over the recent break, I re-architected](https://corteximplant.com/@twop0intfive/115777695594103952) my Raspberry Pi-based broadcasting bot from a simple script into a resilient, professional-grade piece of infrastructure. Here is how I applied **Business Continuity** principles to my personal technical stack.
+[Over the recent break, I re-architected](https://corteximplant.com/@twop0intfive/115777695594103952) my Raspberry Pi-based broadcasting bot from a simple script into a resilient, professional-grade piece of infrastructure. Here is how I applied **Business Continuity** principles to my personal technical stack. 
 
 ### 1. The Migration to a Monorepo
 
