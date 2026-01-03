@@ -2,20 +2,20 @@
 permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>elbatey.twop0intfive.xyz</title>
 <description>Notes on Sovereign Infrastructure and Tech</description>
 <link>https://elbatey.twop0intfive.xyz/</link>
+<atom:link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" type="application/rss+xml" />
 <lastBuildDate>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
 {%- for post in collections.all | reverse -%}
 {%- if loop.index0 < 10 -%}
-{%- set absolutePostUrl %}https://elbatey.twop0intfive.xyz{{ post.url }}{% endset -%}
 <item>
 <title>{{ post.data.title | e }}</title>
-<link>{{ absolutePostUrl | trim }}</link>
-<guid isPermaLink="true">{{ absolutePostUrl | trim }}</guid>
+<link>https://elbatey.twop0intfive.xyz{{ post.url }}</link>
+<guid>https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
 <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
 <description><![CDATA[{{ post.templateContent | safe }}]]></description>
 </item>
