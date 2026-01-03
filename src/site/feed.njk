@@ -7,14 +7,14 @@ eleventyExcludeFromCollections: true
 <channel>
 <title>elbatey.twop0intfive.xyz</title>
 <description>Notes on Sovereign Infrastructure and Tech</description>
-<link>https://elbatey.twop0intfive.xyz/</link>
+<atom:link href="https://elbatey.twop0intfive.xyz/" rel="alternate" type="text/html" />
 <atom:link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" type="application/rss+xml" />
 <lastBuildDate>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
 {%- for post in collections.all | reverse -%}
 {%- if loop.index0 < 10 -%}
 <item>
 <title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
-<link>https://elbatey.twop0intfive.xyz{{ post.url }}</link>
+<atom:link href="https://elbatey.twop0intfive.xyz{{ post.url }}" rel="alternate" type="text/html" />
 <guid isPermaLink="true">https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
 <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
 <description><![CDATA[{{ post.templateContent | safe }}]]></description>
