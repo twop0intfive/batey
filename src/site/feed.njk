@@ -2,26 +2,26 @@
 permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <channel>
-    <title>elbatey.twop0intfive.xyz</title>
-    <description>Notes on Sovereign Infrastructure and Tech</description>
-    <link>https://elbatey.twop0intfive.xyz/</link>
-    <atom:link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
-    {%- for post in collections.all | reverse -%}
-    {%- if loop.index0 < 10 -%}
-    <item>
-      <title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
-      <link>https://elbatey.twop0intfive.xyz{{ post.url }}</link>
-      <atom:link rel="alternate" type="text/html" href="https://elbatey.twop0intfive.xyz{{ post.url }}" />
-      <guid isPermaLink="true">https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
-      <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
-      <dc:creator>twop0intfive</dc:creator>
-      <description><![CDATA[{{ post.templateContent | safe }}]]></description>
-    </item>
-    {%- endif -%}
-    {%- endfor -%}
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>elbatey.twop0intfive.xyz</title>
+  <subtitle>Notes on Sovereign Infrastructure and Tech</subtitle>
+  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" />
+  <link href="https://elbatey.twop0intfive.xyz/" />
+  <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://elbatey.twop0intfive.xyz/</id>
+  <author>
+    <name>twop0intfive</name>
+  </author>
+  {%- for post in collections.all | reverse -%}
+  {%- if loop.index0 < 10 -%}
+  <entry>
+    <title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
+    <link href="https://elbatey.twop0intfive.xyz{{ post.url }}" />
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>https://elbatey.twop0intfive.xyz{{ post.url }}</id>
+    <content type="html"><![CDATA[{{ post.templateContent | safe }}]]></content>
+  </entry>
+  {%- endif -%}
+  {%- endfor -%}
+</feed>
