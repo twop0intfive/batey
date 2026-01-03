@@ -3,23 +3,24 @@ permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<title>elbatey.twop0intfive.xyz</title>
-<description>Notes on Sovereign Infrastructure and Tech</description>
-<atom:link href="https://elbatey.twop0intfive.xyz/" rel="alternate" type="text/html" />
-<atom:link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" type="application/rss+xml" />
-<lastBuildDate>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
-{%- for post in collections.all | reverse -%}
-{%- if loop.index0 < 10 -%}
-<item>
-<title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
-<atom:link href="https://elbatey.twop0intfive.xyz{{ post.url }}" rel="alternate" type="text/html" />
-<guid isPermaLink="true">https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
-<pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
-<description><![CDATA[{{ post.templateContent | safe }}]]></description>
-</item>
-{%- endif -%}
-{%- endfor -%}
-</channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>elbatey.twop0intfive.xyz</title>
+    <description>Notes on Sovereign Infrastructure and Tech</description>
+    <link>https://elbatey.twop0intfive.xyz/</link>
+    <atom:link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
+    {%- for post in collections.all | reverse -%}
+    {%- if loop.index0 < 10 -%}
+    <item>
+      <title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
+      <link>https://elbatey.twop0intfive.xyz{{ post.url }}</link>
+      <guid isPermaLink="true">https://elbatey.twop0intfive.xyz{{ post.url }}</guid>
+      <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
+      <dc:creator>twop0intfive</dc:creator>
+      <description><![CDATA[{{ post.templateContent | safe }}]]></description>
+    </item>
+    {%- endif -%}
+    {%- endfor -%}
+  </channel>
 </rss>
