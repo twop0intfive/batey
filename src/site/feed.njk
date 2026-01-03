@@ -3,26 +3,24 @@ permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>elbatey.twop0intfive.xyz</title>
-  <subtitle>Notes on Sovereign Infrastructure and Tech</subtitle>
-  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self"></link>
-  <link href="https://elbatey.twop0intfive.xyz/"></link>
-  <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-  <id>https://elbatey.twop0intfive.xyz/</id>
-  <author>
-    <name>twop0intfive</name>
-  </author>
-  {%- for post in collections.all | reverse -%}
-    {%- if loop.index0 < 10 -%}
-      {%- set absolutePostUrl %}https://elbatey.twop0intfive.xyz{{ post.url }}{% endset %}
-      <entry>
-        <title>{{ post.data.title }}</title>
-        <link rel="alternate" href="{{ absolutePostUrl }}"></link>
-        <updated>{{ post.date | dateToRfc3339 }}</updated>
-        <id>{{ absolutePostUrl }}</id>
-        <content type="html"><![CDATA[{{ post.templateContent | safe }}]]></content>
-      </entry>
-    {%- endif -%}
-  {%- endfor -%}
-</feed>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>elbatey.twop0intfive.xyz</title>
+    <link>https://elbatey.twop0intfive.xyz/</link>
+    <description>Notes on Sovereign Infrastructure and Tech</description>
+    <language>en</language>
+    <lastBuildDate>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
+    {%- for post in collections.all | reverse -%}
+      {%- if loop.index0 < 10 -%}
+        {%- set absolutePostUrl %}https://elbatey.twop0intfive.xyz{{ post.url }}{% endset %}
+        <item>
+          <title>{{ post.data.title }}</title>
+          <link>{{ absolutePostUrl }}</link>
+          <guid>{{ absolutePostUrl }}</guid>
+          <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
+          <content:encoded><![CDATA[{{ post.templateContent | safe }}]]></content:encoded>
+        </item>
+      {%- endif -%}
+    {%- endfor -%}
+  </channel>
+</rss>
