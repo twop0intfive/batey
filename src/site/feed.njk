@@ -6,8 +6,8 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>elbatey.twop0intfive.xyz</title>
   <subtitle>Notes on Sovereign Infrastructure and Tech</subtitle>
-  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" />
-  <link href="https://elbatey.twop0intfive.xyz/" />
+  <atom:link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" type="application/atom+xml" xmlns:atom="http://www.w3.org/2005/Atom" />
+  <atom:link href="https://elbatey.twop0intfive.xyz/" rel="alternate" type="text/html" xmlns:atom="http://www.w3.org/2005/Atom" />
   <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>https://elbatey.twop0intfive.xyz/</id>
   <author>
@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
   {%- if loop.index0 < 10 -%}
   <entry>
     <title>{{ post.data.title | e if post.data.title else "Untitled Note" }}</title>
-    <link href="https://elbatey.twop0intfive.xyz{{ post.url }}" />
+    <atom:link href="https://elbatey.twop0intfive.xyz{{ post.url }}" rel="alternate" type="text/html" xmlns:atom="http://www.w3.org/2005/Atom" />
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>https://elbatey.twop0intfive.xyz{{ post.url }}</id>
     <content type="html"><![CDATA[{{ post.templateContent | safe }}]]></content>
