@@ -6,21 +6,23 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>elbatey.twop0intfive.xyz</title>
   <subtitle>Notes on Sovereign Infrastructure and Tech</subtitle>
-  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self"/>
-  <link href="https://elbatey.twop0intfive.xyz/"/>
+  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self" />
+  <link href="https://elbatey.twop0intfive.xyz/" />
   <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>https://elbatey.twop0intfive.xyz/</id>
   <author>
     <name>twop0intfive</name>
   </author>
-  {%- for post in collections.all | reverse | limit(10) %}
-  {%- set absolutePostUrl %}https://elbatey.twop0intfive.xyz{{ post.url }}{% endset %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-  </entry>
-  {%- endfor %}
+  {%- for post in collections.all | reverse -%}
+    {%- if loop.index0 < 10 -%}
+      {%- set absolutePostUrl %}https://elbatey.twop0intfive.xyz{{ post.url }}{% endset %}
+      <entry>
+        <title>{{ post.data.title }}</title>
+        <link href="{{ absolutePostUrl }}" />
+        <updated>{{ post.date | dateToRfc3339 }}</updated>
+        <id>{{ absolutePostUrl }}</id>
+        <content type="html"><![CDATA[{{ post.templateContent | safe }}]]></content>
+      </entry>
+    {%- endif -%}
+  {%- endfor -%}
 </feed>
