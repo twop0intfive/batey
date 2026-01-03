@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
     <name>twop0intfive</name>
   </author>
   {%- for post in collections.all | reverse | limit(10) %}
-  {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://elbatey.twop0intfive.xyz") }}{% endset %}
+  {%- set absolutePostUrl %}https://elbatey.twop0intfive.xyz{{ post.url }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
