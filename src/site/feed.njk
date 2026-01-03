@@ -1,30 +1,26 @@
----json
-{
-  "permalink": "/feed.xml",
-  "eleventyExcludeFromCollections": true
-}
 ---
-{%if meta.siteBaseUrl %}<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ meta.siteBaseUrl }}">
-    <title>{{ meta.siteName}}</title>
-    <link href="{{ meta.siteBaseUrl }}{{ permalink }}" rel="self" /////>
-    <link href="{{ meta.siteBaseUrl }}" /////>
-    <updated>{{ collections.notes | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-    <id>{{ meta.siteBaseUrl }}</id>
-    {%- for note in collections.note | reverse %}
-        <entry>
-            <title>
-                {% if note.title %}{{ note.title }}
-                {% else %}{{ note.fileSlug }}
-                {% endif %}
-            </title>
-            <updated>{%if note.data.updated %}{{ note.data.updated | dateToZulu }}{%else%}{{ note.date | dateToRfc3339 }}{%endif%}</updated>
-            <id>{{ meta.siteBaseUrl }}{{note.url | url }}</id>
-            <content type="html">
-                {{ note.templateContent | hideDataview | taggify | link | htmlToAbsoluteUrls(meta.siteBaseUrl) }}
-            </content>
-            <link href="{{ meta.siteBaseUrl }}{{note.url | url }}" /////>
-        </entry>
-    {%- endfor %}
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>elbatey.twop0intfive.xyz</title>
+  <subtitle>Notes on Sovereign Infrastructure and Tech</subtitle>
+  <link href="https://elbatey.twop0intfive.xyz/feed.xml" rel="self"/>
+  <link href="https://elbatey.twop0intfive.xyz/"/>
+  <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://elbatey.twop0intfive.xyz/</id>
+  <author>
+    <name>twop0intfive</name>
+  </author>
+  {%- for post in collections.all | reverse | limit(10) %}
+  {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://elbatey.twop0intfive.xyz") }}{% endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
 </feed>
-{% endif %}
